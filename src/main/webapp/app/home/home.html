@@ -1,0 +1,89 @@
+<div ng-cloak>
+    <div class="row">
+        
+        <div class="col-md-8 col-md-offset-2">
+            <form ng-show="!vm.success" name="form" role="form" novalidate="" ng-submit="vm.register()" show-validation="" class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength ng-valid-email" aria-hidden="false">
+
+                <div class="form-group">
+                    <label class="control-label" for="login">Start Destination</label>
+                    <input type="text" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength ng-touched" id="login" name="login" placeholder="Ex : Nanterre Université" ng-model="vm.registerAccount.login" ng-minlength="1" ng-maxlength="50" ng-pattern="/^[a-z0-9]*$/" required="" aria-invalid="true">
+                    <div ng-show="form.login.$dirty &amp;&amp; form.login.$invalid" aria-hidden="true" class="ng-hide">
+                        <p class="help-block" ng-show="form.login.$error.required" aria-hidden="false">
+                            Your Destination is required.
+                        </p>
+                        <p class="help-block ng-hide" ng-show="form.login.$error.minlength" aria-hidden="true">
+                            YOur Destination is required to be at least 1 character.
+                        </p>
+                        <p class="help-block ng-hide" ng-show="form.login.$error.maxlength" aria-hidden="true">
+                            Your Destination cannot be longer than 50 characters.
+                        </p>
+                        <p class="help-block ng-hide" ng-show="form.login.$error.pattern" aria-hidden="true">
+                            Your Destination can only contain lower-case letters and digits.
+                    </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">End Destination</label>
+                    <input type="email" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" id="email" name="email" placeholder="Ex : La Courneuve" ng-model="vm.registerAccount.email" ng-minlength="5" ng-maxlength="100" required="" aria-invalid="true">
+                    <div ng-show="form.email.$dirty &amp;&amp; form.email.$invalid" aria-hidden="true" class="ng-hide">
+                        <p class="help-block" ng-show="form.email.$error.required" aria-hidden="false">
+                            Your End Destionation is required.
+                        </p>
+                        <p class="help-block ng-hide" ng-show="form.email.$error.email" aria-hidden="true">
+                            Your End Destination is invalid.
+                        </p>
+                        <p class="help-block ng-hide" ng-show="form.email.$error.minlength" aria-hidden="true">
+                            Your End Destination is required to be at least 5 characters.
+                        </p>
+                        <p class="help-block ng-hide" ng-show="form.email.$error.maxlength" aria-hidden="true">
+                            Your End Destination cannot be longer than 100 characters.
+                        </p>
+                    </div>
+                </div>
+	            
+	            <h1>Welcome, In Carpooling!</h1>
+	            <p class="lead">This is First page for project my team</p>
+
+	            <div ng-switch="vm.isAuthenticated()">
+	                <div class="alert alert-success" ng-switch-when="true">
+	                    You are logged in as user "{{vm.account.login}}".
+	                </div>
+
+	                <div class="alert alert-warning" ng-switch-when="false">
+	                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+	                </div>
+
+	                <div class="alert alert-warning" ng-switch-when="false">
+	                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+	                </div>
+	            </div>               
+
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" disabled="disabled">Search</button>
+            </form>
+        </div>
+            <span class="Background img-responsive img-rounded"></span>
+
+        <div class="col-md-8">
+
+			<div class="embed-responsive embed-responsive-16by9"> 
+				<iframe class="embed-responsive-item" src="//www.youtube.com/embed/ZccI7MjZtps" allowfullscreen=""></iframe> 
+			</div>
+
+            <p>
+                If you have any question on Carpooling:
+            </p>
+
+            <ul>
+                <li><a href="https://github.com/StarGroove/Carpooling" target="_blank">Git Carpooling</a></li>
+                <li><a href="https://github.com/CallixteBailly/AngularsTest" target="_blank">Example for AngularJS</a></li>
+                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank">JHipster bug tracker</a></li>
+                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank">JHipster public chat room</a></li>
+                <li><a href="https://twitter.com/java_hipster" target="_blank" >follow @java_hipster on Twitter</a></li>
+            </ul>
+
+            <p>
+             <span>If you like Carpooling, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/StarGroove/Carpooling" target="_blank">Github</a>!
+            </p>
+        </div>
+    </div>
+</div>
